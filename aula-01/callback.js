@@ -9,6 +9,3 @@ const myFunctionCallback = value => {
 }
 
 sum(10, 5, myFunctionCallback)
-
-
-
