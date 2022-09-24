@@ -1,0 +1,88 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Movie",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8087/api/movies"
+    }
+  ],
+  "tags": [
+    {
+      "name": "movie",
+      "description": "Movie"
+    }
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "tags": [
+          "movie"
+        ],
+        "description": "Add a new movie",
+        "requestBody": {
+          "description": "Create a new pet in the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Movie"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Movie": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "title": {
+            "type": "string",
+            "example": "ABC"
+          },
+          "description": {
+            "type": "string",
+            "example": "Description of ABC"
+          },
+          "release_year": {
+            "type": "integer",
+            "format": "int64",
+            "example": 2020
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "x-api-key",
+        "in": "header"
+      }
+    }
+  }
+}
