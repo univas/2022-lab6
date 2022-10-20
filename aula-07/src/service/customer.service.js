@@ -4,9 +4,8 @@ const create = customer => {
 
 }
 
-const getAll = () => {
-    customer.findAll()
-    return 'hello'
+const getAll = async () => {
+    return await customer.findAll()
 }
 
 const getCustomerById = customerId => {
