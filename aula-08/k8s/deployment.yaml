@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-api
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-node-api
+  template:
+    metadata:
+      labels:
+        app: my-node-api
+    spec:
+      containers:
+        - name: my-node-api
+          image: rodrigoluisfaria/api-xuxa:2.0.0
+          ports:
+            - containerPort: 8087

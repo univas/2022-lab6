@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-node-api
+  labels:
+    name: my-node-api
+spec:
+  containers:
+  - name: my-node-api
+    image: rodrigoluisfaria/api-xuxa:1.0.0
+    ports:
+      - containerPort: 8087
